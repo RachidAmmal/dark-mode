@@ -1,0 +1,90 @@
+body{
+   margin: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 90vh;
+}
+.input{
+   visibility: hidden;
+}
+.label{
+   transition: .3s;
+   cursor: pointer;
+   position: absolute;
+   width: 100px;
+   height: 40px;
+   background-color: lightgray;
+   border-radius: 200px;
+   -webkit-border-radius: 200px;
+   -moz-border-radius: 200px;
+   -ms-border-radius: 200px;
+   -o-border-radius: 200px;
+   -webkit-transition: .3s;
+   -moz-transition: .3s;
+   -ms-transition: .3s;
+   -o-transition: .3s;
+} 
+.circle{
+   transition: .6s;
+   width: 34px;
+   background-color: black;
+   height: 34px;
+   top: 3px;
+   position: absolute;
+   left: 3px;
+   border-radius: 50%;
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   -ms-border-radius: 50%;
+   -o-border-radius: 50%;
+   animation: toggleOff .4s linear forwards;
+   -webkit-animation: toggleOff .4s linear forwards;
+   -webkit-transition: .6s;
+   -moz-transition: .6s;
+   -ms-transition: .6s;
+   -o-transition: .6s;
+}
+input:checked + .label{
+   background-color: black;
+}
+input:checked + .label .circle{
+   background-color: white;
+}
+input:checked + .label .circle{
+   animation: toggleOn 0.4s linear forwards;
+   -webkit-animation:toggleOn  0.4s linear forwards;
+   
+}
+@keyframes toggleOn{
+   0%{
+      transform: translateX(0);
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -o-transform: translateX(0);
+   }
+   100%{
+      transform: translateX(59px);
+      -webkit-transform: translateX(59px);
+      -moz-transform: translateX(59px);
+      -ms-transform: translateX(59px);
+      -o-transform: translateX(59px);
+}
+}
+@keyframes toggleOff{
+   0%{
+      transform: translateX(47px);
+      -webkit-transform: translateX(47px);
+      -moz-transform: translateX(47px);
+      -ms-transform: translateX(47px);
+      -o-transform: translateX(47px);
+}
+   100%{
+      transform: translateX(0);
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -o-transform: translateX(0);
+}
+}
